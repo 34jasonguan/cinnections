@@ -31,7 +31,7 @@ h1{
 }
 
 .movie{
-  background-color: #fff0db; 
+  background-color: #d6c0a8; 
   display: flex; 
   justify-content: center; 
   align-items: center; 
@@ -41,4 +41,12 @@ h1{
 .movie img{
   max-width: 90%; 
   max-height: 80%; 
+}
+
+.card.correct{
+  background-color: greenyellow;
+}
+
+.card.wrong{
+  background-color: red;
 }
