@@ -18,6 +18,7 @@ body{
 h1{
   text-align: center; 
   margin-bottom: 1em; 
+  font-size: x-large;
 }
 
 .container{
@@ -44,18 +45,10 @@ h1{
 }
 
 .movie.selected {
-  background-color: lightgreen; /* Color when selected */
+  background-color: #818589; /* Color when selected */
 }
 
 .movie img{
   max-width: 90%; 
   max-height: 80%; 
-}
-
-.card.correct{
-  background-color: greenyellow;
-}
-
-.card.wrong{
-  background-color: red;
 }
