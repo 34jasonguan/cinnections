@@ -22,40 +22,6 @@ function Boxes(){
     ].sort(() => Math.random() - 0.5)
 )
 
-    // const [prev, setPrev] = useState(-1)
-
-    // function check(current){
-    //     if(items[current].id == items[prev.id]){
-    //         items[current].stat = "correct"
-    //         items[prev].stat = "correct"
-    //         setItems([...items])
-    //         setPrev(-1)
-    //     } else {
-    //         items[current].stat = "wrong"
-    //         items[prev].stat = "wrong"
-    //         setItems([...items])
-    //         setTimeout(() => {
-    //             items[current].stat = ""
-    //             items[prev].stat = ""
-    //             setItems([...items])
-    //             setPrev(-1)
-    //         }, 1000)
-    //     }
-    // }
-
-    // function handleClick(id){
-    //     if(prev == -1){
-    //         items[id].stat = "unsolved"
-    //         setItems([...items])
-    //         setPrev(id)
-    //     } else if(prev == 3) {
-    //         check(id)
-    //     } else {
-    //         // setPrev(prev+1)
-    //         check(id)
-    //     }
-    // }
-
     const [selectedMovies, setSelectedMovies] = useState([]);
 
     const handleClick = (index) => {
@@ -64,7 +30,6 @@ function Boxes(){
         } else if (selectedMovies.length < 4) {
             const newSelectedMovies = [...selectedMovies, index];
             setSelectedMovies(newSelectedMovies);
-
             if (newSelectedMovies.length === 4) {
                 checkSelection(newSelectedMovies);
             }
@@ -74,7 +39,6 @@ function Boxes(){
     const checkSelection = (selectedIndexes) => {
         const firstId = items[selectedIndexes[0]].id;
         const isCorrect = selectedIndexes.every(index => items[index].id === firstId);
-
         if (isCorrect) {
             alert("Correct! All selected movies are in the same group.");
         } else {
