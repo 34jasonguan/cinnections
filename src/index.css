@@ -31,11 +31,20 @@ h1{
 }
 
 .movie{
-  background-color: #d6c0a8; 
+  background-color: #D3D3D3; 
   display: flex; 
   justify-content: center; 
   align-items: center; 
   border-radius: 5px; 
+  transition: background-color 0.3s ease;
+}
+
+.movie:hover {
+  background-color: #818589;
+}
+
+.movie.selected {
+  background-color: lightgreen; /* Color when selected */
 }
 
 .movie img{

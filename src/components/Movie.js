@@ -1,8 +1,7 @@
-function Movie({item, id, handleClick}){
-    const itemClass = item.stat ? " unsolved " + item.stat: ""; 
-
+function Movie({ item, id, handleClick, isSelected }){
     return (
-        <div className={"movie" + itemClass} onClick ={() => handleClick(id)} >
+        <div className={`movie ${isSelected ? 'selected' : ''}`} 
+        onClick={() => handleClick(id)}>
             <img src={item.img} alt="" />
         </div>
     )
