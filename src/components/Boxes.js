@@ -25,6 +25,7 @@ function Boxes(){
     const [selectedMovies, setSelectedMovies] = useState([]);
     const [correctGroups, setCorrectGroups] = useState([]);
     const [incorrectIndexes, setIncorrectIndexes] = useState([]);
+    const [showPopup, setShowPopup] = useState(false);
     const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
     const colors = ["#BAFFC9", "#FFFFBA", "#FFDFBA", "#FFB3BA"];
@@ -51,6 +52,15 @@ function Boxes(){
     const checkSelection = (selectedIndexes) => {
         const firstId = items[selectedIndexes[0]].id;
         const isCorrect = selectedIndexes.every(index => items[index].id === firstId);
+        const selectedItems = selectedIndexes.map(index => items[index]);
+        const correctItems = selectedItems.filter(item => item.id === firstId);
+
+        if (correctItems.length === 3) {
+            setShowPopup(true);
+            setTimeout(() => {
+                setShowPopup(false);
+            }, 2000);
+        }
 
         if (isCorrect) {
             const assignedColor = colorMapping[firstId];
@@ -103,6 +113,13 @@ function Boxes(){
                     isShaking={item.shaking}
                 />
             )) }
+            {showPopup && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <p>Three correct, one wrong! Try again.</p>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
