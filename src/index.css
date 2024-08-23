@@ -1,6 +1,7 @@
 *{
   margin: 0; 
   padding: 0; 
+  box-sizing: border-box;
 }
 
 html, body{
@@ -93,9 +94,8 @@ h1{
   background-color: whitesmoke;
   border: 2px solid lightgray;
   border-radius: 10px;
-  margin-bottom: 20px; 
-  position: fixed;
-  bottom: 10px; 
+  position: absolute;
+  bottom: -220px; 
   width: 100%;
   max-width: 600px; 
 }
