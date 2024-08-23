@@ -130,3 +130,14 @@ h1{
 .life.lost {
   background-color: whitesmoke; 
 }
+
+.category-name {
+  position: absolute;
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  z-index: 100; /* Ensure it’s above other elements */
+  width: auto;
+}

@@ -19,7 +19,7 @@ function Boxes(){
         { id: 4, img: '/img/shining.jpg', stat: "", shaking: false },
         { id: 4, img: '/img/dark-tower.jpg', stat: "", shaking: false },
         { id: 4, img: '/img/green-mile.jpg', stat: "", shaking: false }
-    ]//.sort(() => Math.random() - 0.5) --> removed for testing purposes
+    ]//.sort(() => Math.random() - 0.5)
 )
 
     const [selectedMovies, setSelectedMovies] = useState([]);
@@ -29,6 +29,8 @@ function Boxes(){
     const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
     const colors = ["#BAFFC9", "#FFFFBA", "#FFDFBA", "#FFB3BA"];
+    const [categoryName, setCategoryName] = useState("");
+    const [categoryPositions, setCategoryPositions] = useState([]);
 
     const colorMapping = {
         1: "#BAFFC9", 
@@ -37,7 +39,15 @@ function Boxes(){
         4: "#FFB3BA"  
     };
 
+    const categoryMapping = {
+        1: "Directed by Denis Villeneuve",
+        2: "2017 Best Picture Nominees",
+        3: "Starring Christian Bale",
+        4: "Based on a Stephen King Novel"
+    };
+
     const [lives, setLives] = useState(4);
+
 
     const handleClick = (index) => {
         if (selectedMovies.includes(index)) {
@@ -78,6 +88,7 @@ function Boxes(){
 
         if (isCorrect) {
             const assignedColor = colorMapping[firstId];
+            const category = categoryMapping[firstId];
             const updatedItems = items.map((item, index) => {
                 if (selectedIndexes.includes(index)) {
                     return { ...item, stat: "correct", color: assignedColor, shaking: false };
@@ -89,8 +100,16 @@ function Boxes(){
             const remainingItems = updatedItems.filter(item => item.stat !== "correct");
             setItems([...correctGroup, ...remainingItems]);
 
+            const positionTop = 80 + (correctGroups.length * 205);
+            setCategoryName(category);
+            setCategoryPositions(prev => [
+                ...prev,
+                { categoryName: category, top: positionTop }
+            ]);
+            
             setCorrectGroups([...correctGroups, selectedIndexes]);
             setIncorrectIndexes([]);
+
         } else {
             setLives(lives - 1);
             
@@ -136,6 +155,29 @@ function Boxes(){
                     </div>
                 </div>
             )}
+        {categoryPositions.map((group, index) => (
+            <div
+                key={index}
+                className="category-name"
+                style={{
+                    position: 'absolute',
+                    top: `${group.top}px`,
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    backgroundColor: 'white',
+                    padding: '5px',
+                    borderRadius: '5px',
+                    border: '1px solid gray',
+                    zIndex: 100,
+                    textAlign: 'center',
+                    fontSize: '1em',
+                    fontWeight: 'bold',
+                    width: 'auto'
+                }}
+            >
+                <p>{group.categoryName}</p>
+            </div>
+        ))}
             <div className="life-tracker-wrapper">
                 <div className="life-tracker">
                     <span className="lives-text">Lives Remaining: </span>
