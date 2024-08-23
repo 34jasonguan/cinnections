@@ -116,7 +116,7 @@ function Boxes(){
             {showPopup && (
                 <div className="popup">
                     <div className="popup-content">
-                        <p>Three correct, one wrong! Try again.</p>
+                        <p>One away...</p>
                     </div>
                 </div>
             )}

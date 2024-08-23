@@ -1,5 +1,4 @@
 TODO: 
-- implement popup when 3/4 guesses are correct
 - implement 4 lives
     - game over message
     - reveal answers upon getting 4 wrong
