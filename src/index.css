@@ -13,6 +13,9 @@ body{
   display: flex; 
   justify-content: center; 
   align-items: center; 
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 h1{
@@ -80,4 +83,50 @@ h1{
 
 .popup-content {
   text-align: center;
+}
+
+.life-tracker-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: whitesmoke;
+  border: 2px solid lightgray;
+  border-radius: 10px;
+  margin-bottom: 20px; 
+  position: fixed;
+  bottom: 10px; 
+  width: 100%;
+  max-width: 600px; 
+}
+
+.life-tracker {
+  display: flex;
+  align-items: center;
+}
+
+.lives-text {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.lives {
+  display: flex;
+}
+
+.life {
+  width: 20px;
+  height: 20px;
+  background-color: lightgray;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.life.active {
+  background-color: #D3D3D3; 
+}
+
+.life.lost {
+  background-color: whitesmoke; 
 }

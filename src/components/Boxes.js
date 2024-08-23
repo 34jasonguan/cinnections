@@ -37,6 +37,8 @@ function Boxes(){
         4: "#FFB3BA"  
     };
 
+    const [lives, setLives] = useState(4);
+
     const handleClick = (index) => {
         if (selectedMovies.includes(index)) {
             setSelectedMovies(selectedMovies.filter(movieIndex => movieIndex !== index));
@@ -90,6 +92,8 @@ function Boxes(){
             setCorrectGroups([...correctGroups, selectedIndexes]);
             setIncorrectIndexes([]);
         } else {
+            setLives(lives - 1);
+            
             const updatedItems = items.map((item, index) => {
                 if (selectedIndexes.includes(index)) {
                     return { ...item, shaking: true };
@@ -132,6 +136,19 @@ function Boxes(){
                     </div>
                 </div>
             )}
+            <div className="life-tracker-wrapper">
+                <div className="life-tracker">
+                    <span className="lives-text">Lives Remaining: </span>
+                    <div className="lives">
+                        {[...Array(4)].map((_, index) => (
+                            <div 
+                                key={index} 
+                                className={`life ${index < lives ? 'active' : 'lost'}`}
+                            ></div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
