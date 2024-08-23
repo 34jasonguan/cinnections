@@ -53,14 +53,26 @@ function Boxes(){
         const firstId = items[selectedIndexes[0]].id;
         const isCorrect = selectedIndexes.every(index => items[index].id === firstId);
         const selectedItems = selectedIndexes.map(index => items[index]);
-        const correctItems = selectedItems.filter(item => item.id === firstId);
+        //const correctItems = selectedItems.filter(item => item.id === firstId);
+        const ids = selectedItems.map(item => item.id);
 
-        if (correctItems.length === 3) {
+        const uniqueIds = [...new Set(ids)];
+        const idCounts = uniqueIds.map(id => ids.filter(x => x === id).length);
+        const hasThreeAndOne = idCounts.includes(3) && idCounts.includes(1);
+
+        if (hasThreeAndOne) {
             setShowPopup(true);
             setTimeout(() => {
-                setShowPopup(false);
+                setShowPopup(false); 
             }, 2000);
         }
+
+        // if (correctItems.length === 3) {
+        //     setShowPopup(true);
+        //     setTimeout(() => {
+        //         setShowPopup(false);
+        //     }, 2000);
+        // }
 
         if (isCorrect) {
             const assignedColor = colorMapping[firstId];
