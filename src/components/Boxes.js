@@ -47,7 +47,7 @@ function Boxes(){
     };
 
     const [lives, setLives] = useState(4);
-
+    const [gameOver, setGameOver] = useState(false);
 
     const handleClick = (index) => {
         if (selectedMovies.includes(index)) {
@@ -112,6 +112,9 @@ function Boxes(){
 
         } else {
             setLives(lives - 1);
+            if (lives === 1) {
+                setGameOver(true);
+            }
             
             const updatedItems = items.map((item, index) => {
                 if (selectedIndexes.includes(index)) {
@@ -155,29 +158,36 @@ function Boxes(){
                     </div>
                 </div>
             )}
-        {categoryPositions.map((group, index) => (
-            <div
-                key={index}
-                className="category-name"
-                style={{
-                    position: 'absolute',
-                    top: `${group.top}px`,
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    backgroundColor: 'white',
-                    padding: '5px',
-                    borderRadius: '5px',
-                    border: '1px solid gray',
-                    zIndex: 100,
-                    textAlign: 'center',
-                    fontSize: '1em',
-                    fontWeight: 'bold',
-                    width: 'auto'
-                }}
-            >
-                <p>{group.categoryName}</p>
-            </div>
-        ))}
+            {gameOver && (
+                <div className="popup">
+                    <div className="popup-content">
+                        <p>Game Over!</p>
+                    </div>
+                </div>
+            )}
+            {categoryPositions.map((group, index) => (
+                <div
+                    key={index}
+                    className="category-name"
+                    style={{
+                        position: 'absolute',
+                        top: `${group.top}px`,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: 'white',
+                        padding: '5px',
+                        borderRadius: '5px',
+                        border: '1px solid gray',
+                        zIndex: 100,
+                        textAlign: 'center',
+                        fontSize: '1em',
+                        fontWeight: 'bold',
+                        width: 'auto'
+                    }}
+                >
+                    <p>{group.categoryName}</p>
+                </div>
+            ))}
             <div className="life-tracker-wrapper">
                 <div className="life-tracker">
                     <span className="lives-text">Lives Remaining: </span>
