@@ -188,6 +188,9 @@ function Boxes(){
                     <p>{group.categoryName}</p>
                 </div>
             ))}
+            <a href="https://github.com/34jasonguan" target="_blank" rel="noopener noreferrer" className="github-link">
+                <img src="/img/github.png" alt="GitHub Logo" className="github-logo" />
+            </a>
             <div className="life-tracker-wrapper">
                 <div className="life-tracker">
                     <span className="lives-text">Lives Remaining: </span>
