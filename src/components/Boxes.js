@@ -19,7 +19,7 @@ function Boxes(){
         { id: 4, img: '/img/shining.jpg', stat: "", shaking: false },
         { id: 4, img: '/img/dark-tower.jpg', stat: "", shaking: false },
         { id: 4, img: '/img/green-mile.jpg', stat: "", shaking: false }
-    ]//.sort(() => Math.random() - 0.5)
+    ].sort(() => Math.random() - 0.5)
 )
 
     const [selectedMovies, setSelectedMovies] = useState([]);
