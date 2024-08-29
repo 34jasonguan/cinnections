@@ -65,7 +65,6 @@ function Boxes(){
         const firstId = items[selectedIndexes[0]].id;
         const isCorrect = selectedIndexes.every(index => items[index].id === firstId);
         const selectedItems = selectedIndexes.map(index => items[index]);
-        //const correctItems = selectedItems.filter(item => item.id === firstId);
         const ids = selectedItems.map(item => item.id);
 
         const uniqueIds = [...new Set(ids)];
@@ -78,13 +77,6 @@ function Boxes(){
                 setShowPopup(false); 
             }, 2000);
         }
-
-        // if (correctItems.length === 3) {
-        //     setShowPopup(true);
-        //     setTimeout(() => {
-        //         setShowPopup(false);
-        //     }, 2000);
-        // }
 
         if (isCorrect) {
             const assignedColor = colorMapping[firstId];
