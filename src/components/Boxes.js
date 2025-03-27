@@ -78,14 +78,14 @@ function Boxes(){
             setItems([...correctGroup, ...remainingItems]);
 
             const positionTop = 120 + (correctGroups.length * 205);
-            setCategoryName(category);
+            //setCategoryName(category);
             setCategoryPositions(prev => [
                 ...prev,
                 { categoryName: category, top: positionTop }
             ]);
             
             setCorrectGroups([...correctGroups, selectedIndexes]);
-            setIncorrectIndexes([]);
+            // setIncorrectIndexes([]);
 
         } else {
             setLives(lives - 1);
@@ -101,7 +101,7 @@ function Boxes(){
             });
 
             setItems(updatedItems);
-            setIncorrectIndexes(selectedIndexes);
+            //setIncorrectIndexes(selectedIndexes);
 
             setTimeout(() => {
                 const resetItems = items.map((item, index) => {
