@@ -1,26 +1,11 @@
 import { useState } from "react";
 import Movie from "./Movie"; 
+import Data from "./data"
 
 function Boxes(){
-    const [items, setItems] = useState([
-        { id: 1, img: '/img/dune.png', stat: "", shaking: false },
-        { id: 1, img: '/img/prisoners.png', stat: "", shaking: false },
-        { id: 1, img: '/img/incendies.png', stat: "", shaking: false },
-        { id: 1, img: '/img/blade-runner-2049.png', stat: "", shaking: false },
-        { id: 2, img: '/img/lalaland.png', stat: "", shaking: false },
-        { id: 2, img: '/img/moonlight.png', stat: "", shaking: false },
-        { id: 2, img: '/img/hacksaw-ridge.png', stat: "", shaking: false },
-        { id: 2, img: '/img/manchester.png', stat: "", shaking: false },
-        { id: 3, img: '/img/big-short.jpg', stat: "", shaking: false },
-        { id: 3, img: '/img/dark-knight.jpg', stat: "", shaking: false },
-        { id: 3, img: '/img/ford-ferrari.jpg', stat: "", shaking: false },
-        { id: 3, img: '/img/thor.jpg', stat: "", shaking: false },
-        { id: 4, img: '/img/it.jpg', stat: "", shaking: false },
-        { id: 4, img: '/img/shining.jpg', stat: "", shaking: false },
-        { id: 4, img: '/img/dark-tower.jpg', stat: "", shaking: false },
-        { id: 4, img: '/img/green-mile.jpg', stat: "", shaking: false }
-    ].sort(() => Math.random() - 0.5)
-)
+    const [items, setItems] = useState(
+        Data.map(movie => ({ ...movie, stat: "", shaking: false })).sort(() => Math.random() - 0.5)
+    );
 
     const [selectedMovies, setSelectedMovies] = useState([]);
     const [correctGroups, setCorrectGroups] = useState([]);
