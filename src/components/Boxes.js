@@ -9,12 +9,12 @@ function Boxes(){
 
     const [selectedMovies, setSelectedMovies] = useState([]);
     const [correctGroups, setCorrectGroups] = useState([]);
-    const [incorrectIndexes, setIncorrectIndexes] = useState([]);
+    //const [incorrectIndexes, setIncorrectIndexes] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
-    const [currentColorIndex, setCurrentColorIndex] = useState(0);
+    //const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
-    const colors = ["#BAFFC9", "#FFFFBA", "#FFDFBA", "#FFB3BA"];
-    const [categoryName, setCategoryName] = useState("");
+    //const colors = ["#BAFFC9", "#FFFFBA", "#FFDFBA", "#FFB3BA"];
+    //const [categoryName, setCategoryName] = useState("");
     const [categoryPositions, setCategoryPositions] = useState([]);
 
     const colorMapping = {
@@ -24,12 +24,12 @@ function Boxes(){
         4: "#FFB3BA"  
     };
 
-    const categoryMapping = {
-        1: "Directed by Denis Villeneuve",
-        2: "2017 Best Picture Nominees",
-        3: "Starring Christian Bale",
-        4: "Based on a Stephen King Novel"
-    };
+    // const categoryMapping = {
+    //     1: "Directed by Denis Villeneuve",
+    //     2: "2017 Best Picture Nominees",
+    //     3: "Starring Christian Bale",
+    //     4: "Based on a Stephen King Novel"
+    // };
 
     const [lives, setLives] = useState(4);
     const [gameOver, setGameOver] = useState(false);
