@@ -1,10 +1,10 @@
 import { useState } from "react";
 import Movie from "./Movie"; 
-import Data from "./data"
+import { Categories, Movies } from "./data"
 
 function Boxes(){
     const [items, setItems] = useState(
-        Data.map(movie => ({ ...movie, stat: "", shaking: false })).sort(() => Math.random() - 0.5)
+        Movies.map(movie => ({ ...movie, stat: "", shaking: false })).sort(() => Math.random() - 0.5)
     );
 
     const [selectedMovies, setSelectedMovies] = useState([]);
@@ -65,7 +65,7 @@ function Boxes(){
 
         if (isCorrect) {
             const assignedColor = colorMapping[firstId];
-            const category = categoryMapping[firstId];
+            const category = Categories[firstId];
             const updatedItems = items.map((item, index) => {
                 if (selectedIndexes.includes(index)) {
                     return { ...item, stat: "correct", color: assignedColor, shaking: false };
