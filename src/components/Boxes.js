@@ -77,7 +77,7 @@ function Boxes(){
             const remainingItems = updatedItems.filter(item => item.stat !== "correct");
             setItems([...correctGroup, ...remainingItems]);
 
-            const positionTop = 80 + (correctGroups.length * 205);
+            const positionTop = 120 + (correctGroups.length * 205);
             setCategoryName(category);
             setCategoryPositions(prev => [
                 ...prev,
