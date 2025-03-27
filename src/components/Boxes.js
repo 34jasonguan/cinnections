@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Movie from "./Movie"; 
-import { Categories, Movies } from "./data"
+import { Categories, Movies } from './data/demodata'
 
 function Boxes(){
     const [items, setItems] = useState(
