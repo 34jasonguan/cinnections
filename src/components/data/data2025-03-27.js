@@ -5,25 +5,26 @@ const Categories = {
     4: "Predominantly Yellow Colour Palette"
 };
 
-const currentDate = new Date().toISOString().split('T')[0];
+//const currentDate = new Date().toISOString().split('T')[0];
+const currentDate = "2025-03-27"
 
 const Movies = [
-    { id: 1, img: `/build/img/${currentDate}/1.png` },
-    { id: 1, img: `/build/img/${currentDate}/2.png` },
-    { id: 1, img: `/build/img/${currentDate}/3.png` },
-    { id: 1, img: `/build/img/${currentDate}/4.png` },
-    { id: 2, img: `/build/img/${currentDate}/5.png` },
-    { id: 2, img: `/build/img/${currentDate}/6.png` },
-    { id: 2, img: `/build/img/${currentDate}/7.png` },
-    { id: 2, img: `/build/img/${currentDate}/8.png` },
-    { id: 3, img: `/build/img/${currentDate}/9.png` },
-    { id: 3, img: `/build/img/${currentDate}/10.png` },
-    { id: 3, img: `/build/img/${currentDate}/11.png` },
-    { id: 3, img: `/build/img/${currentDate}/12.png` },
-    { id: 4, img: `/build/img/${currentDate}/13.png` },
-    { id: 4, img: `/build/img/${currentDate}/14.png` },
-    { id: 4, img: `/build/img/${currentDate}/15.png` },
-    { id: 4, img: `/build/img/${currentDate}/16.png` }
+    { id: 1, img: `/img/${currentDate}/1.png` },
+    { id: 1, img: `/img/${currentDate}/2.png` },
+    { id: 1, img: `/img/${currentDate}/3.png` },
+    { id: 1, img: `/img/${currentDate}/4.png` },
+    { id: 2, img: `/img/${currentDate}/5.png` },
+    { id: 2, img: `/img/${currentDate}/6.png` },
+    { id: 2, img: `/img/${currentDate}/7.png` },
+    { id: 2, img: `/img/${currentDate}/8.png` },
+    { id: 3, img: `/img/${currentDate}/9.png` },
+    { id: 3, img: `/img/${currentDate}/10.png` },
+    { id: 3, img: `/img/${currentDate}/11.png` },
+    { id: 3, img: `/img/${currentDate}/12.png` },
+    { id: 4, img: `/img/${currentDate}/13.png` },
+    { id: 4, img: `/img/${currentDate}/14.png` },
+    { id: 4, img: `/img/${currentDate}/15.png` },
+    { id: 4, img: `/img/${currentDate}/16.png` }
   ];  
 
 export { currentDate, Categories, Movies };
