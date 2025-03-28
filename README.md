@@ -8,5 +8,6 @@ These features are currently being worked on:
 - Fully implemented game over message & category reveal
 - Deselect, shuffle, and submit buttons
 - Start page
+- Fix aesthetics: scaling with window size, correct label placement, etc.
 - Hints?
 - More efficient method of storing and accessing daily puzzle data
